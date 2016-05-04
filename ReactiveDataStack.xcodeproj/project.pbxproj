@@ -16,6 +16,15 @@
 		7C5FBB4A1CDA753F00AB9F5F /* CoreDataStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C5FBB471CDA753F00AB9F5F /* CoreDataStack.framework */; };
 		7C5FBB4B1CDA753F00AB9F5F /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C5FBB481CDA753F00AB9F5F /* ReactiveCocoa.framework */; };
 		7C5FBB4C1CDA753F00AB9F5F /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C5FBB491CDA753F00AB9F5F /* Result.framework */; };
+		7C5FBB5A1CDA769B00AB9F5F /* CoreDataStack+ReactiveCocoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5FBB421CDA736C00AB9F5F /* CoreDataStack+ReactiveCocoa.swift */; };
+		7C5FBB5B1CDA769B00AB9F5F /* NSManagedObjectContext+ReactiveCocoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5FBB441CDA738F00AB9F5F /* NSManagedObjectContext+ReactiveCocoa.swift */; };
+		7C5FBB5C1CDA76A600AB9F5F /* ReactiveDataStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C3534901CDA33BD0008C0D5 /* ReactiveDataStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C5FBB951CDA777400AB9F5F /* CoreDataStack+ReactiveCocoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5FBB421CDA736C00AB9F5F /* CoreDataStack+ReactiveCocoa.swift */; };
+		7C5FBB961CDA777400AB9F5F /* NSManagedObjectContext+ReactiveCocoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5FBB441CDA738F00AB9F5F /* NSManagedObjectContext+ReactiveCocoa.swift */; };
+		7C5FBB971CDA777900AB9F5F /* ReactiveDataStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C3534901CDA33BD0008C0D5 /* ReactiveDataStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C5FBB981CDA778000AB9F5F /* ReactiveDataStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C3534901CDA33BD0008C0D5 /* ReactiveDataStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7C5FBB991CDA778500AB9F5F /* CoreDataStack+ReactiveCocoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5FBB421CDA736C00AB9F5F /* CoreDataStack+ReactiveCocoa.swift */; };
+		7C5FBB9A1CDA778500AB9F5F /* NSManagedObjectContext+ReactiveCocoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5FBB441CDA738F00AB9F5F /* NSManagedObjectContext+ReactiveCocoa.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +50,9 @@
 		7C5FBB471CDA753F00AB9F5F /* CoreDataStack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreDataStack.framework; path = Carthage/Build/iOS/CoreDataStack.framework; sourceTree = "<group>"; };
 		7C5FBB481CDA753F00AB9F5F /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
 		7C5FBB491CDA753F00AB9F5F /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		7C5FBB521CDA768900AB9F5F /* ReactiveDataStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveDataStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C5FBB621CDA76C900AB9F5F /* ReactiveDataStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveDataStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C5FBB7E1CDA76E400AB9F5F /* ReactiveDataStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveDataStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +71,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C3534981CDA33BD0008C0D5 /* ReactiveDataStack.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C5FBB4E1CDA768900AB9F5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C5FBB5E1CDA76C900AB9F5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C5FBB7A1CDA76E400AB9F5F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +114,9 @@
 			children = (
 				7C35348D1CDA33BD0008C0D5 /* ReactiveDataStack.framework */,
 				7C3534971CDA33BD0008C0D5 /* ReactiveDataStackTests.xctest */,
+				7C5FBB521CDA768900AB9F5F /* ReactiveDataStack.framework */,
+				7C5FBB621CDA76C900AB9F5F /* ReactiveDataStack.framework */,
+				7C5FBB7E1CDA76E400AB9F5F /* ReactiveDataStack.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -126,12 +162,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7C5FBB4F1CDA768900AB9F5F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C5FBB5C1CDA76A600AB9F5F /* ReactiveDataStack.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C5FBB5F1CDA76C900AB9F5F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C5FBB971CDA777900AB9F5F /* ReactiveDataStack.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C5FBB7B1CDA76E400AB9F5F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C5FBB981CDA778000AB9F5F /* ReactiveDataStack.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		7C35348C1CDA33BD0008C0D5 /* ReactiveDataStack */ = {
+		7C35348C1CDA33BD0008C0D5 /* ReactiveDataStack-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7C3534A11CDA33BD0008C0D5 /* Build configuration list for PBXNativeTarget "ReactiveDataStack" */;
+			buildConfigurationList = 7C3534A11CDA33BD0008C0D5 /* Build configuration list for PBXNativeTarget "ReactiveDataStack-iOS" */;
 			buildPhases = (
 				7C3534881CDA33BD0008C0D5 /* Sources */,
 				7C3534891CDA33BD0008C0D5 /* Frameworks */,
@@ -142,7 +202,7 @@
 			);
 			dependencies = (
 			);
-			name = ReactiveDataStack;
+			name = "ReactiveDataStack-iOS";
 			productName = ReactiveDataStack;
 			productReference = 7C35348D1CDA33BD0008C0D5 /* ReactiveDataStack.framework */;
 			productType = "com.apple.product-type.framework";
@@ -165,6 +225,60 @@
 			productReference = 7C3534971CDA33BD0008C0D5 /* ReactiveDataStackTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		7C5FBB511CDA768900AB9F5F /* ReactiveDataStack-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C5FBB571CDA768900AB9F5F /* Build configuration list for PBXNativeTarget "ReactiveDataStack-watchOS" */;
+			buildPhases = (
+				7C5FBB4D1CDA768900AB9F5F /* Sources */,
+				7C5FBB4E1CDA768900AB9F5F /* Frameworks */,
+				7C5FBB4F1CDA768900AB9F5F /* Headers */,
+				7C5FBB501CDA768900AB9F5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ReactiveDataStack-watchOS";
+			productName = "ReactiveDataStack-watchOS";
+			productReference = 7C5FBB521CDA768900AB9F5F /* ReactiveDataStack.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7C5FBB611CDA76C900AB9F5F /* ReactiveDataStack-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C5FBB731CDA76C900AB9F5F /* Build configuration list for PBXNativeTarget "ReactiveDataStack-tvOS" */;
+			buildPhases = (
+				7C5FBB5D1CDA76C900AB9F5F /* Sources */,
+				7C5FBB5E1CDA76C900AB9F5F /* Frameworks */,
+				7C5FBB5F1CDA76C900AB9F5F /* Headers */,
+				7C5FBB601CDA76C900AB9F5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ReactiveDataStack-tvOS";
+			productName = "ReactiveDataStack-tvOS";
+			productReference = 7C5FBB621CDA76C900AB9F5F /* ReactiveDataStack.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7C5FBB7D1CDA76E400AB9F5F /* ReactiveDataStack-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C5FBB8F1CDA76E400AB9F5F /* Build configuration list for PBXNativeTarget "ReactiveDataStack-OSX" */;
+			buildPhases = (
+				7C5FBB791CDA76E400AB9F5F /* Sources */,
+				7C5FBB7A1CDA76E400AB9F5F /* Frameworks */,
+				7C5FBB7B1CDA76E400AB9F5F /* Headers */,
+				7C5FBB7C1CDA76E400AB9F5F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ReactiveDataStack-OSX";
+			productName = "ReactiveDataStack-OSX";
+			productReference = 7C5FBB7E1CDA76E400AB9F5F /* ReactiveDataStack.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -181,6 +295,15 @@
 					7C3534961CDA33BD0008C0D5 = {
 						CreatedOnToolsVersion = 7.3;
 					};
+					7C5FBB511CDA768900AB9F5F = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					7C5FBB611CDA76C900AB9F5F = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					7C5FBB7D1CDA76E400AB9F5F = {
+						CreatedOnToolsVersion = 7.3;
+					};
 				};
 			};
 			buildConfigurationList = 7C3534871CDA33BD0008C0D5 /* Build configuration list for PBXProject "ReactiveDataStack" */;
@@ -195,7 +318,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7C35348C1CDA33BD0008C0D5 /* ReactiveDataStack */,
+				7C35348C1CDA33BD0008C0D5 /* ReactiveDataStack-iOS */,
+				7C5FBB511CDA768900AB9F5F /* ReactiveDataStack-watchOS */,
+				7C5FBB611CDA76C900AB9F5F /* ReactiveDataStack-tvOS */,
+				7C5FBB7D1CDA76E400AB9F5F /* ReactiveDataStack-OSX */,
 				7C3534961CDA33BD0008C0D5 /* ReactiveDataStackTests */,
 			);
 		};
@@ -211,6 +337,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7C3534951CDA33BD0008C0D5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C5FBB501CDA768900AB9F5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C5FBB601CDA76C900AB9F5F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C5FBB7C1CDA76E400AB9F5F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -237,12 +384,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7C5FBB4D1CDA768900AB9F5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C5FBB5A1CDA769B00AB9F5F /* CoreDataStack+ReactiveCocoa.swift in Sources */,
+				7C5FBB5B1CDA769B00AB9F5F /* NSManagedObjectContext+ReactiveCocoa.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C5FBB5D1CDA76C900AB9F5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C5FBB951CDA777400AB9F5F /* CoreDataStack+ReactiveCocoa.swift in Sources */,
+				7C5FBB961CDA777400AB9F5F /* NSManagedObjectContext+ReactiveCocoa.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C5FBB791CDA76E400AB9F5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C5FBB991CDA778500AB9F5F /* CoreDataStack+ReactiveCocoa.swift in Sources */,
+				7C5FBB9A1CDA778500AB9F5F /* NSManagedObjectContext+ReactiveCocoa.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		7C35349A1CDA33BD0008C0D5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7C35348C1CDA33BD0008C0D5 /* ReactiveDataStack */;
+			target = 7C35348C1CDA33BD0008C0D5 /* ReactiveDataStack-iOS */;
 			targetProxy = 7C3534991CDA33BD0008C0D5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -355,7 +529,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wellth.ReactiveDataStack;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ReactiveDataStack;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -377,7 +551,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wellth.ReactiveDataStack;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ReactiveDataStack;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -402,6 +576,126 @@
 			};
 			name = Release;
 		};
+		7C5FBB581CDA768900AB9F5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ReactiveDataStack/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wellth.ReactiveDataStack-watchOS";
+				PRODUCT_NAME = ReactiveDataStack;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		7C5FBB591CDA768900AB9F5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ReactiveDataStack/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.wellth.ReactiveDataStack-watchOS";
+				PRODUCT_NAME = ReactiveDataStack;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		7C5FBB741CDA76C900AB9F5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ReactiveDataStack/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wellth.ReactiveDataStack;
+				PRODUCT_NAME = ReactiveDataStack;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		7C5FBB751CDA76C900AB9F5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = ReactiveDataStack/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wellth.ReactiveDataStack;
+				PRODUCT_NAME = ReactiveDataStack;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		7C5FBB901CDA76E400AB9F5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = ReactiveDataStack/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wellth.ReactiveDataStack;
+				PRODUCT_NAME = ReactiveDataStack;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		7C5FBB911CDA76E400AB9F5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = ReactiveDataStack/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wellth.ReactiveDataStack;
+				PRODUCT_NAME = ReactiveDataStack;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -414,7 +708,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7C3534A11CDA33BD0008C0D5 /* Build configuration list for PBXNativeTarget "ReactiveDataStack" */ = {
+		7C3534A11CDA33BD0008C0D5 /* Build configuration list for PBXNativeTarget "ReactiveDataStack-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7C3534A21CDA33BD0008C0D5 /* Debug */,
@@ -431,6 +725,30 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		7C5FBB571CDA768900AB9F5F /* Build configuration list for PBXNativeTarget "ReactiveDataStack-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C5FBB581CDA768900AB9F5F /* Debug */,
+				7C5FBB591CDA768900AB9F5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7C5FBB731CDA76C900AB9F5F /* Build configuration list for PBXNativeTarget "ReactiveDataStack-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C5FBB741CDA76C900AB9F5F /* Debug */,
+				7C5FBB751CDA76C900AB9F5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7C5FBB8F1CDA76E400AB9F5F /* Build configuration list for PBXNativeTarget "ReactiveDataStack-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C5FBB901CDA76E400AB9F5F /* Debug */,
+				7C5FBB911CDA76E400AB9F5F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

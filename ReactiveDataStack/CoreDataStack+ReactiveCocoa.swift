@@ -32,10 +32,10 @@ extension CoreDataStack {
     }
     
     func performInNewMainContextChildContextProducer(name: String? = nil) -> SignalProducer<NSManagedObjectContext, NoError> {
-        return newBackgroundContext(name, parentContext: mainContext).performBlockProducer()
+        return performInConcurrentContextProducer(name, parentContext: mainContext)
     }
     
     func performInConcurrentContextProducer(name: String? = nil, parentContext: NSManagedObjectContext? = nil) -> SignalProducer<NSManagedObjectContext, NoError> {
-        return newBackgroundContext().performBlockProducer()
+        return newBackgroundContext(name, parentContext: parentContext).performBlockProducer()
     }
 }

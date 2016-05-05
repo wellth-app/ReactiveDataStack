@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7C5FBB7D1CDA76E400AB9F5F"
-               BuildableName = "ReactiveDataStack-OSX.framework"
+               BuildableName = "ReactiveDataStack.framework"
                BlueprintName = "ReactiveDataStack-OSX"
                ReferencedContainer = "container:ReactiveDataStack.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7C5FBB7D1CDA76E400AB9F5F"
-            BuildableName = "ReactiveDataStack-OSX.framework"
+            BuildableName = "ReactiveDataStack.framework"
             BlueprintName = "ReactiveDataStack-OSX"
             ReferencedContainer = "container:ReactiveDataStack.xcodeproj">
          </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7C5FBB7D1CDA76E400AB9F5F"
-            BuildableName = "ReactiveDataStack-OSX.framework"
+            BuildableName = "ReactiveDataStack.framework"
             BlueprintName = "ReactiveDataStack-OSX"
             ReferencedContainer = "container:ReactiveDataStack.xcodeproj">
          </BuildableReference>
@@ -83,7 +83,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7C5FBB7D1CDA76E400AB9F5F"
-            BuildableName = "ReactiveDataStack-OSX.framework"
+            BuildableName = "ReactiveDataStack.framework"
             BlueprintName = "ReactiveDataStack-OSX"
             ReferencedContainer = "container:ReactiveDataStack.xcodeproj">
          </BuildableReference>

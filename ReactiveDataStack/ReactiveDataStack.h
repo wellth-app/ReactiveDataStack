@@ -6,7 +6,7 @@
 //  Copyright © 2016 Wellth. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import CoreDataStack;
 
 //! Project version number for ReactiveDataStack.
 FOUNDATION_EXPORT double ReactiveDataStackVersionNumber;

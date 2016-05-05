@@ -5,7 +5,7 @@ import CoreDataStack
 
 
 extension CoreDataStack {
-    func persistProducer() -> SignalProducer<Bool, NSError> {
+    public func persistProducer() -> SignalProducer<Bool, NSError> {
         return SignalProducer { observer, _ in
             self.persistWithCompletion { error in
                 if let error = error as? NSError {
@@ -18,24 +18,19 @@ extension CoreDataStack {
         }
     }
     
-    func performInNewBackgroundContextProducer() -> SignalProducer<NSManagedObjectContext, NoError> {
-        return SignalProducer { observer, _ in
-            self.performInNewBackgroundContext { backgroundContext in
-                observer.sendNext(backgroundContext)
-                observer.sendCompleted()
-            }
-        }
+    public func performInNewBackgroundContextProducer() -> SignalProducer<NSManagedObjectContext, NoError> {
+        return newBackgroundContext().performBlockProducer()
     }
     
-    func performInMainContextProducer() -> SignalProducer<NSManagedObjectContext, NoError> {
+    public func performInMainContextProducer() -> SignalProducer<NSManagedObjectContext, NoError> {
         return mainContext.performBlockProducer()
     }
     
-    func performInNewMainContextChildContextProducer(name: String? = nil) -> SignalProducer<NSManagedObjectContext, NoError> {
+    public func performInNewMainContextChildContextProducer(name: String? = nil) -> SignalProducer<NSManagedObjectContext, NoError> {
         return performInConcurrentContextProducer(name, parentContext: mainContext)
     }
     
-    func performInConcurrentContextProducer(name: String? = nil, parentContext: NSManagedObjectContext? = nil) -> SignalProducer<NSManagedObjectContext, NoError> {
+    public func performInConcurrentContextProducer(name: String? = nil, parentContext: NSManagedObjectContext? = nil) -> SignalProducer<NSManagedObjectContext, NoError> {
         return newBackgroundContext(name, parentContext: parentContext).performBlockProducer()
     }
 }

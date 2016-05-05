@@ -63,7 +63,7 @@ public extension NSManagedObjectContext {
             })
     }
     
-    func performBlockProducer() -> SignalProducer<NSManagedObjectContext, NoError> {
+    public func performBlockProducer() -> SignalProducer<NSManagedObjectContext, NoError> {
         return SignalProducer(value: self)
             .observeOn(CoreDataScheduler(managedObjectContext: self))
     }

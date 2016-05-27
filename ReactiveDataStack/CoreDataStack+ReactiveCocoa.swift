@@ -18,19 +18,19 @@ extension CoreDataStack {
         }
     }
     
-    public func performInNewBackgroundContextProducer() -> SignalProducer<NSManagedObjectContext, NoError> {
-        return newBackgroundContext().performBlockProducer()
+    public func performInMainContextProducer<E: ErrorType>() -> SignalProducer<NSManagedObjectContext, E> {
+        return mainContext
+            .performBlockProducer()
+            .promoteErrors(E)
     }
     
-    public func performInMainContextProducer() -> SignalProducer<NSManagedObjectContext, NoError> {
-        return mainContext.performBlockProducer()
-    }
-    
-    public func performInNewMainContextChildContextProducer(name: String? = nil) -> SignalProducer<NSManagedObjectContext, NoError> {
+    public func performInNewMainContextChildContextProducer<E: ErrorType>(name: String? = nil) -> SignalProducer<NSManagedObjectContext, E> {
         return performInConcurrentContextProducer(name, parentContext: mainContext)
     }
     
-    public func performInConcurrentContextProducer(name: String? = nil, parentContext: NSManagedObjectContext? = nil) -> SignalProducer<NSManagedObjectContext, NoError> {
-        return newBackgroundContext(name, parentContext: parentContext).performBlockProducer()
+    public func performInConcurrentContextProducer<E: ErrorType>(name: String? = nil, parentContext: NSManagedObjectContext? = nil) -> SignalProducer<NSManagedObjectContext, E> {
+        return newBackgroundContext(name, parentContext: parentContext)
+            .performBlockProducer()
+            .promoteErrors(E)
     }
 }

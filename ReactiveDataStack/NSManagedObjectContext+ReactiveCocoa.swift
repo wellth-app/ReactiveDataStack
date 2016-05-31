@@ -32,12 +32,18 @@ public extension NSManagedObjectContext {
         return insertedObjects.count + updatedObjects.count + deletedObjects.count
     }
     
+    /// Creates a signal that is executed on the queue managed by self.
+    public func performBlockProducer<E: ErrorType>() -> SignalProducer<NSManagedObjectContext, E> {
+        return SignalProducer(value: self)
+            .observeOn(CoreDataScheduler(managedObjectContext: self))
+            .promoteErrors(E)
+    }
+    
     ///  Tries to save.
     ///  Returns a signal which sends true if successful
     ///  or an error
     public func saveProducer() -> SignalProducer<Bool, NSError> {
         return performBlockProducer()
-            .promoteErrors(NSError)
             .flatMap(.Latest) { context -> SignalProducer<Bool, NSError> in
                 do {
                     try context.save()
@@ -61,10 +67,5 @@ public extension NSManagedObjectContext {
                     break
                 }
             })
-    }
-    
-    public func performBlockProducer() -> SignalProducer<NSManagedObjectContext, NoError> {
-        return SignalProducer(value: self)
-            .observeOn(CoreDataScheduler(managedObjectContext: self))
     }
 }

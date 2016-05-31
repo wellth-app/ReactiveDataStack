@@ -21,7 +21,6 @@ extension CoreDataStack {
     public func performInMainContextProducer<E: ErrorType>() -> SignalProducer<NSManagedObjectContext, E> {
         return mainContext
             .performBlockProducer()
-            .promoteErrors(E)
     }
     
     public func performInNewMainContextChildContextProducer<E: ErrorType>(name: String? = nil) -> SignalProducer<NSManagedObjectContext, E> {
@@ -31,6 +30,5 @@ extension CoreDataStack {
     public func performInConcurrentContextProducer<E: ErrorType>(name: String? = nil, parentContext: NSManagedObjectContext? = nil) -> SignalProducer<NSManagedObjectContext, E> {
         return newBackgroundContext(name, parentContext: parentContext)
             .performBlockProducer()
-            .promoteErrors(E)
     }
 }

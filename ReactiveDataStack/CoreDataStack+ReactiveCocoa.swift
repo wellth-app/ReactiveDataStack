@@ -23,12 +23,12 @@ extension CoreDataStack {
             .performBlockProducer()
     }
     
-    public func performInNewMainContextChildContextProducer<E: ErrorType>(name: String? = nil) -> SignalProducer<NSManagedObjectContext, E> {
-        return performInConcurrentContextProducer(name, parentContext: mainContext)
+    public func performInNewMainContextChildContextProducer<E: ErrorType>(name: String? = nil, mergeChanges: Bool = false) -> SignalProducer<NSManagedObjectContext, E> {
+        return performInConcurrentContextProducer(name, parentContext: mainContext, mergeChanges: mergeChanges)
     }
     
-    public func performInConcurrentContextProducer<E: ErrorType>(name: String? = nil, parentContext: NSManagedObjectContext? = nil) -> SignalProducer<NSManagedObjectContext, E> {
-        return newBackgroundContext(name, parentContext: parentContext)
+    public func performInConcurrentContextProducer<E: ErrorType>(name: String? = nil, parentContext: NSManagedObjectContext? = nil, mergeChanges: Bool = false) -> SignalProducer<NSManagedObjectContext, E> {
+        return newBackgroundContext(name, parentContext: parentContext, mergeChanges: mergeChanges)
             .performBlockProducer()
     }
 }

@@ -149,6 +149,11 @@ public class CoreDataStack {
         return persistentStoreCoordinator
     }()
     
+    deinit {
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: NSManagedObjectContextWillSaveNotification, object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: NSManagedObjectContextDidSaveNotification, object: nil)
+    }
+    
     // MARK: - Initalizers
     
     public convenience init?() {
@@ -165,11 +170,6 @@ public class CoreDataStack {
         self.modelBundle = bundle
         self.storeType = storeType
         self.storeName = storeName
-    }
-    
-    deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: NSManagedObjectContextWillSaveNotification, object: nil)
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: NSManagedObjectContextDidSaveNotification, object: nil)
     }
     
     // MARK: - Observers
@@ -205,7 +205,7 @@ public class CoreDataStack {
     }
     
     /// Creates a new private context.
-    public func newBackgroundContext(name: String? = nil, parentContext: NSManagedObjectContext? = nil) -> NSManagedObjectContext {
+    public func newBackgroundContext(name: String? = nil, parentContext: NSManagedObjectContext? = nil, mergeChanges: Bool = false) -> NSManagedObjectContext {
         let context = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
         
         if let parentContext = parentContext {
@@ -218,7 +218,9 @@ public class CoreDataStack {
         context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         context.name = name
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CoreDataStack.backgroundContextDidSave(_:)), name: NSManagedObjectContextDidSaveNotification, object: context)
+        if mergeChanges {
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CoreDataStack.backgroundContextDidSave(_:)), name: NSManagedObjectContextDidSaveNotification, object: context)
+        }
         
         return context
     }
@@ -262,25 +264,26 @@ public class CoreDataStack {
     /// Drops a collection for an `entity`. This is not object-graph safe, and
     /// mostly for development purposes. Deletes in production should respect
     /// the object graph
-    public func dropEntityCollection(entityName: String) -> Bool {
+    public func dropEntityCollection(entityName: String, managedObjectContext: NSManagedObjectContext? = nil) -> Bool {
         let fetchRequest = NSFetchRequest(entityName: entityName)
+        let managedObjectContext = managedObjectContext ?? mainContext
         
         if #available(iOS 9.0, OSX 10.11, *) {
-            return batchDeleteCollection(fetchRequest)
+            return batchDeleteCollection(fetchRequest, managedObjectContext: managedObjectContext)
         } else {
             // Fallback on earlier versions
-            return fetchAndDeleteCollection(fetchRequest)
+            return fetchAndDeleteCollection(fetchRequest, managedObjectContext: managedObjectContext)
         }
         
     }
     
     /// Utilizes `NSBatchDeleteRequest` to delete objects matching `fetchRequest`
     @available(iOS 9.0, OSX 10.11, *)
-    private func batchDeleteCollection(fetchRequest: NSFetchRequest) -> Bool {
+    private func batchDeleteCollection(fetchRequest: NSFetchRequest, managedObjectContext: NSManagedObjectContext) -> Bool {
         let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
         
         do {
-            try self._persistentStoreCoordinator?.executeRequest(batchDeleteRequest, withContext: mainContext)
+            try self._persistentStoreCoordinator?.executeRequest(batchDeleteRequest, withContext: managedObjectContext)
             return true
         } catch {
             return false
@@ -288,17 +291,17 @@ public class CoreDataStack {
     }
     
     /// Loads objects matching `fetchRequest` into memory, and then deletes them.
-    private func fetchAndDeleteCollection(fetchRequest: NSFetchRequest) -> Bool {
+    private func fetchAndDeleteCollection(fetchRequest: NSFetchRequest, managedObjectContext: NSManagedObjectContext) -> Bool {
         fetchRequest.includesPropertyValues = false
         
         do {
-            guard let objects = try mainContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            guard let objects = try managedObjectContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
             else {
                 return false
             }
             
             for object in objects {
-                mainContext.deleteObject(object)
+                managedObjectContext.deleteObject(object)
             }
             
             return true

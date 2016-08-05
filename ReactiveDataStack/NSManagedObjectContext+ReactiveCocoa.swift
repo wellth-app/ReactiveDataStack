@@ -25,7 +25,7 @@ public extension NSManagedObjectContext {
 
 extension SignalProducerType where Value == NSManagedObjectContext {
     /// Merges changes from the reciever to `context` after a `NSManagedObjectContextDidSaveNotification`
-    func mergeChanges(inContext context: NSManagedObjectContext) -> SignalProducer<Value, Error> {
+    public func mergeChanges(inContext context: NSManagedObjectContext) -> SignalProducer<Value, Error> {
         return producer
             .map { managedObjectContext -> NSManagedObjectContext in
                 NSNotificationCenter.defaultCenter().addObserver(context, selector: #selector(NSManagedObjectContext.observedContextDidSave(_:)), name: NSManagedObjectContextDidSaveNotification, object: managedObjectContext)

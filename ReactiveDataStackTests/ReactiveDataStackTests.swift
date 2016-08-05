@@ -7,7 +7,9 @@
 //
 
 import XCTest
+
 @testable import ReactiveDataStack
+import ReactiveCocoa
 
 class ReactiveDataStackTests: XCTestCase {
     
@@ -22,8 +24,13 @@ class ReactiveDataStackTests: XCTestCase {
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let managedObjectContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+        managedObjectContext
+            .producer
+            .performBlock { context in
+                return context
+            }
+            .save()
     }
     
     func testPerformanceExample() {

@@ -24,6 +24,10 @@
 		7C5FBB981CDA778000AB9F5F /* ReactiveDataStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C3534901CDA33BD0008C0D5 /* ReactiveDataStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7C5FBB991CDA778500AB9F5F /* CoreDataStack+ReactiveCocoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5FBB421CDA736C00AB9F5F /* CoreDataStack+ReactiveCocoa.swift */; };
 		7C5FBB9A1CDA778500AB9F5F /* NSManagedObjectContext+ReactiveCocoa.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5FBB441CDA738F00AB9F5F /* NSManagedObjectContext+ReactiveCocoa.swift */; };
+		D0575C7A1D4D6CB700F74A03 /* CoreDataScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0575C791D4D6CB700F74A03 /* CoreDataScheduler.swift */; };
+		D0575C7B1D4D6CD800F74A03 /* CoreDataScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0575C791D4D6CB700F74A03 /* CoreDataScheduler.swift */; };
+		D0575C7C1D4D6CD800F74A03 /* CoreDataScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0575C791D4D6CB700F74A03 /* CoreDataScheduler.swift */; };
+		D0575C7D1D4D6CD900F74A03 /* CoreDataScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0575C791D4D6CB700F74A03 /* CoreDataScheduler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,7 @@
 		7C5FBB521CDA768900AB9F5F /* ReactiveDataStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveDataStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C5FBB621CDA76C900AB9F5F /* ReactiveDataStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveDataStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C5FBB7E1CDA76E400AB9F5F /* ReactiveDataStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactiveDataStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0575C791D4D6CB700F74A03 /* CoreDataScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataScheduler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +132,7 @@
 				7C3534921CDA33BD0008C0D5 /* Info.plist */,
 				7C5FBB421CDA736C00AB9F5F /* CoreDataStack+ReactiveCocoa.swift */,
 				7C5FBB441CDA738F00AB9F5F /* NSManagedObjectContext+ReactiveCocoa.swift */,
+				D0575C791D4D6CB700F74A03 /* CoreDataScheduler.swift */,
 			);
 			path = ReactiveDataStack;
 			sourceTree = "<group>";
@@ -370,6 +376,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C5FBB451CDA738F00AB9F5F /* NSManagedObjectContext+ReactiveCocoa.swift in Sources */,
+				D0575C7A1D4D6CB700F74A03 /* CoreDataScheduler.swift in Sources */,
 				7C5FBB431CDA736C00AB9F5F /* CoreDataStack+ReactiveCocoa.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C5FBB5A1CDA769B00AB9F5F /* CoreDataStack+ReactiveCocoa.swift in Sources */,
+				D0575C7B1D4D6CD800F74A03 /* CoreDataScheduler.swift in Sources */,
 				7C5FBB5B1CDA769B00AB9F5F /* NSManagedObjectContext+ReactiveCocoa.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C5FBB951CDA777400AB9F5F /* CoreDataStack+ReactiveCocoa.swift in Sources */,
+				D0575C7C1D4D6CD800F74A03 /* CoreDataScheduler.swift in Sources */,
 				7C5FBB961CDA777400AB9F5F /* NSManagedObjectContext+ReactiveCocoa.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C5FBB991CDA778500AB9F5F /* CoreDataStack+ReactiveCocoa.swift in Sources */,
+				D0575C7D1D4D6CD900F74A03 /* CoreDataScheduler.swift in Sources */,
 				7C5FBB9A1CDA778500AB9F5F /* NSManagedObjectContext+ReactiveCocoa.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -733,6 +743,7 @@
 				7C5FBB591CDA768900AB9F5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7C5FBB731CDA76C900AB9F5F /* Build configuration list for PBXNativeTarget "ReactiveDataStack-tvOS" */ = {
 			isa = XCConfigurationList;
@@ -741,6 +752,7 @@
 				7C5FBB751CDA76C900AB9F5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7C5FBB8F1CDA76E400AB9F5F /* Build configuration list for PBXNativeTarget "ReactiveDataStack-OSX" */ = {
 			isa = XCConfigurationList;
@@ -749,6 +761,7 @@
 				7C5FBB911CDA76E400AB9F5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

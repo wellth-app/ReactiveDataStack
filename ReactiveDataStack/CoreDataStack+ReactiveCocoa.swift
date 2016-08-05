@@ -17,18 +17,4 @@ extension CoreDataStack {
             }
         }
     }
-    
-    public func performInMainContextProducer<E: ErrorType>() -> SignalProducer<NSManagedObjectContext, E> {
-        return mainContext
-            .performBlockProducer()
-    }
-    
-    public func performInNewMainContextChildContextProducer<E: ErrorType>(name: String? = nil, mergeChanges: Bool = false) -> SignalProducer<NSManagedObjectContext, E> {
-        return performInConcurrentContextProducer(name, parentContext: mainContext, mergeChanges: mergeChanges)
-    }
-    
-    public func performInConcurrentContextProducer<E: ErrorType>(name: String? = nil, parentContext: NSManagedObjectContext? = nil, mergeChanges: Bool = false) -> SignalProducer<NSManagedObjectContext, E> {
-        return newBackgroundContext(name, parentContext: parentContext, mergeChanges: mergeChanges)
-            .performBlockProducer()
-    }
 }

@@ -1,7 +1,5 @@
-import ReactiveCocoa
-import Result
-
-
+/// A scheduler that ensures execution occurs on the 
+/// `managedObjectContext`s thread.
 public struct CoreDataScheduler: SchedulerType {
     let managedObjectContext: NSManagedObjectContext
     

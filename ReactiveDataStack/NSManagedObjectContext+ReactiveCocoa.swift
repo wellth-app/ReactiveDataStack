@@ -1,5 +1,3 @@
-import CoreData
-import ReactiveCocoa
 import Result
 
 

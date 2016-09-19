@@ -3,9 +3,9 @@ extension CoreDataStack {
         return SignalProducer { observer, _ in
             self.persistWithCompletion { error in
                 if let error = error as? NSError {
-                    observer.sendFailed(error)
+                    observer.send(error: error)
                 } else {
-                    observer.sendNext(true)
+                    observer.send(value: true)
                     observer.sendCompleted()
                 }
             }

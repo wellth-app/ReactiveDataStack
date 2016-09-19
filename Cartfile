@@ -1,2 +1,2 @@
-github "wellth-app/CoreDataStack" "master"
-github "ReactiveCocoa/ReactiveCocoa" ~> 4.0
+github "wellth-app/CoreDataStack" ~> 1.0
+github "ReactiveCocoa/ReactiveSwift" "master"

@@ -7,7 +7,7 @@
 //
 
 @import CoreDataStack;
-@import ReactiveCocoa;
+@import ReactiveSwift;
 
 //! Project version number for ReactiveDataStack.
 FOUNDATION_EXPORT double ReactiveDataStackVersionNumber;

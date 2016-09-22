@@ -41,19 +41,19 @@ extension SignalProducerProtocol where Value == NSManagedObjectContext {
     }
     
     /// Performs a block on the producers queue, returning the `SignalProducer` from `block`.
-    public func perform<U>(block: @escaping  (NSManagedObjectContext) -> SignalProducer<U, Error>) -> SignalProducer<U, Error> {
+    public func perform<U>(flatMap block: @escaping  (NSManagedObjectContext) -> SignalProducer<U, Error>) -> SignalProducer<U, Error> {
         return producer
             .flatMap(.concat, transform: block)
     }
     
     /// Performs a block on the producers queue, returning a `SignalProducer` with the value from `block`.
-    public func perform<U>(block: @escaping (NSManagedObjectContext) -> U) -> SignalProducer<U, Error> {
+    public func perform<U>(map block: @escaping (NSManagedObjectContext) -> U) -> SignalProducer<U, Error> {
         return producer
             .map(block)
     }
     
     /// Performs a block on the producers queue, returing a `SignalProducer`, using the `Result<U, Error>` returned from `block`.
-    public func perform<U>(block: @escaping  (NSManagedObjectContext) -> Result<U, Error>) -> SignalProducer<U, Error> {
+    public func perform<U>(withResult block: @escaping  (NSManagedObjectContext) -> Result<U, Error>) -> SignalProducer<U, Error> {
         return producer
             .attemptMap(block)
     }

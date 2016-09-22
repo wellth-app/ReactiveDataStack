@@ -9,7 +9,7 @@
 import XCTest
 
 @testable import ReactiveDataStack
-import ReactiveCocoa
+import ReactiveSwift
 
 class ReactiveDataStackTests: XCTestCase {
     
